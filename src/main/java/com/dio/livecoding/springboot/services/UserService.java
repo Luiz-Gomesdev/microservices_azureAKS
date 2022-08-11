@@ -23,7 +23,7 @@ public class UserService {
 
     public UserModel getUser(Long id) {
         return userRepository.findById(id).orElseThrow(() -> {
-            log.error("msg {}", id);
+            log.error("User not found with id {}", id);
             return new RuntimeException("User not found with id " + id);
         });
     };
