@@ -25,7 +25,7 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(() -> {
             log.error("msg {}", id);
             return new RuntimeException("User not found with id " + id);
-        })
+        });
     };
 
     public UserModel create(UserDTO userDTO) {
